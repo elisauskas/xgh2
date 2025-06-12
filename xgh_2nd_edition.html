@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XGH 2nd Edition - Complete Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            line-height: 1.6;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 25mm;
+            box-sizing: border-box;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            page-break-after: always;
+        }
+        
+        .page:last-child {
+            page-break-after: auto;
+        }
+        
+        /* O'Reilly Cover Styles */
+        .oreilly-cover {
+            background: linear-gradient(135deg, #00D4AA 0%, #00B894 50%, #00A085 100%);
+            border: 4px solid #2C1810;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+            position: relative;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.1);
+        }
+        
+        .oreilly-header {
+            text-align: left;
+            background: rgba(255,255,255,0.9);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px solid #2C1810;
+        }
+        
+        .oreilly-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00A085;
+            margin-bottom: 5px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 2px 2px 0px #2C1810;
+        }
+        
+        .oreilly-tagline {
+            font-size: 14px;
+            color: #2C1810;
+            font-style: italic;
+            font-weight: 600;
+        }
+        
+        .animal-section {
+            text-align: center;
+            margin: 30px 0;
+            background: rgba(255,255,255,0.8);
+            padding: 30px;
+            border-radius: 15px;
+            border: 3px solid #2C1810;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .animal-illustration {
+            font-size: 120px;
+            line-height: 1;
+            margin-bottom: 15px;
+            filter: drop-shadow(3px 3px 0px #2C1810);
+            animation: gallop 1.5s infinite ease-in-out;
+        }
+        
+        @keyframes gallop {
+            0%, 100% {
+                transform: translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateX(-8px) rotate(-2deg);
+            }
+            50% {
+                transform: translateX(0) rotate(0deg) scale(1.1);
+            }
+            75% {
+                transform: translateX(8px) rotate(2deg);
+            }
+        }
+        
+        .animal-caption {
+            font-size: 16px;
+            color: #2C1810;
+            font-style: italic;
+            font-weight: 600;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
+        }
+        
+        .book-title-section {
+            text-align: left;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 10px;
+            border: 3px solid #2C1810;
+        }
+        
+        .main-title {
+            font-size: 64px;
+            font-weight: 700;
+            color: #00A085;
+            margin-bottom: 10px;
+            line-height: 1;
+            text-shadow: 3px 3px 0px #2C1810;
+            letter-spacing: -2px;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            color: #2C1810;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
+        }
+        
+        .subtitle-small {
+            font-size: 18px;
+            color: #00B894;
+            margin-bottom: 15px;
+            font-style: italic;
+            font-weight: 600;
+        }
+        
+        .description {
+            font-size: 15px;
+            line-height: 1.4;
+            color: #2C1810;
+            text-align: justify;
+            font-weight: 500;
+        }
+        
+        .oreilly-footer {
+            text-align: left;
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #2C1810;
+        }
+        
+        .author-line {
+            font-size: 16px;
+            color: #00A085;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .edition-line {
+            font-size: 14px;
+            color: #2C1810;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .publisher {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00A085;
+            text-align: right;
+            text-shadow: 2px 2px 0px #2C1810;
+        }
+        
+        /* Content Page Styles */
+        .content-page {
+            text-align: left;
+        }
+        
+        .page-header {
+            border-bottom: 2px solid #000;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+        
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        .axiom {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #333;
+        }
+        
+        .axiom-number {
+            font-weight: 700;
+            color: #000;
+            font-size: 16px;
+        }
+        
+        .axiom-text {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .page-footer {
+            display: none;
+        }
+        
+        .toc {
+            margin: 30px 0;
+        }
+        
+        .toc-item {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .toc-dots {
+            border-bottom: 1px dotted #ccc;
+            flex: 1;
+            margin: 0 10px;
+        }
+        
+        .toc-item-content {
+            display: flex;
+            align-items: baseline;
+        }
+        
+        .final-note {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        @media print {
+            body { margin: 0; }
+            .page { 
+                box-shadow: none; 
+                margin: 0;
+                width: 100%;
+                min-height: 100vh;
+            }
+            .page-footer {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="page oreilly-cover">
+        <div class="oreilly-header">
+            <div class="oreilly-logo">O'RLY?</div>
+            <div class="oreilly-tagline">For when your AI is hallucinating</div>
+        </div>
+        
+        <div class="animal-section">
+            <div class="animal-illustration">
+                🐴
+            </div>
+            <div class="animal-caption">The Caffeinated Horse</div>
+        </div>
+        
+        <div class="book-title-section">
+            <div class="main-title">XGH</div>
+            <div class="subtitle">eXtreme Go Horse</div>
+            <div class="subtitle-small">Second Edition</div>
+            <div class="description">
+                A comprehensive guide to vibe-driven development, AI-assisted coding, and the ancient art of making it someone else's problem
+            </div>
+        </div>
+        
+        <div class="oreilly-footer">
+            <div class="author-line">By The Collective Consciousness of Staff Engineers</div>
+            <div class="edition-line">Revised for the Post-AI Era • June 2025</div>
+            <div class="publisher">O'RLY? Media</div>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1 class="page-title">Table of Contents</h1>
+        </div>
+        
+        <div class="toc">
+            <div class="toc-item">
+                <div class="toc-item-content">
+                    <span>Introduction</span>
+                    <div class="toc-dots"></div>
+                    <span>3</span>
+                </div>
+            </div>
+            <div class="toc-item">
+                <div class="toc-item-content">
+                    <span>Core Principles (Axioms 1-7)</span>
+                    <div class="toc-dots"></div>
+                    <span>4</span>
+                </div>
+            </div>
+            <div class="toc-item">
+                <div class="toc-item-content">
+                    <span>Velocity & Delivery (Axioms 8-14)</span>
+                    <div class="toc-dots"></div>
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="toc-item">
+                <div class="toc-item-content">
+                    <span>Team Dynamics & Communication (Axioms 15-19)</span>
+                    <div class="toc-dots"></div>
+                    <span>6</span>
+                </div>
+            </div>
+            <div class="toc-item">
+                <div class="toc-item-content">
+                    <span>Architecture & Design (Axioms 20-23)</span>
+                    <div class="toc-dots"></div>
+                    <span>7</span>
+                </div>
+            </div>
+            <div class="toc-item">
+                <div class="toc-item-content">
+                    <span>Conclusion</span>
+                    <div class="toc-dots"></div>
+                    <span>8</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-footer">XGH 2nd Edition - Page 2</div>
+    </div>
+
+    <!-- Introduction Page -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1 class="page-title">Introduction</h1>
+        </div>
+        
+        <p>The original XGH (eXtreme Go Horse) methodology revolutionized software development by acknowledging what every developer knew but few dared to say: sometimes you just need to get things done, regardless of best practices.</p>
+        
+        <p>This second edition builds upon the foundational principles of XGH while incorporating the realities of modern software development. We now live in an era of cloud-native applications, microservices architectures, continuous integration pipelines, and most importantly, vibe-driven development.</p>
+        
+        <p>Vibe-coding represents the natural evolution of developer intuition. It's the recognition that sometimes the best solutions come not from rigorous analysis or extensive planning, but from that moment when a developer looks at a problem and just <em>knows</em> what needs to be done.</p>
+        
+        <p>The 23 axioms in this edition reflect the accumulated wisdom of countless developers who have learned to navigate the complex landscape of modern software development while maintaining their sanity and their sense of humor.</p>
+        
+        <p>Whether you're dealing with Kubernetes clusters that have achieved sentience, microservices that communicate through passive-aggressive error messages, or stakeholders who change requirements faster than you can implement them, these axioms will guide you through the chaos.</p>
+        
+        <p>Remember: XGH is not just about cutting corners—it's about cutting the <em>right</em> corners at the <em>right</em> time. It's about understanding that perfect is the enemy of shipped, and shipped is the enemy of unemployed.</p>
+        
+        <div class="page-footer">XGH 2nd Edition - Page 3</div>
+    </div>
+
+    <!-- Core Principles Page -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1 class="page-title">The 23 Axioms of XGH 2nd Edition</h1>
+        </div>
+        
+        <div class="section-title">Core Principles (Axioms 1-7)</div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 1:</div>
+            <div class="axiom-text">If it compiles and the tests pass, it's basically production-ready. If it doesn't compile but the PM is breathing down your neck, comment out the broken parts and ship it anyway. The users will debug it for free.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 2:</div>
+            <div class="axiom-text">Vibe-driven development trumps test-driven development. If the code feels right, it probably is.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 3:</div>
+            <div class="axiom-text">ChatGPT is your senior architect. Prompt with confidence, ship with courage, maintain with delegation.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 4:</div>
+            <div class="axiom-text">Documentation is what AI generates when you paste your code and ask "please document this mess."</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 5:</div>
+            <div class="axiom-text">Technical debt is just future job security. Thank your past self for the guaranteed employment.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 6:</div>
+            <div class="axiom-text">If your system architecture can't be explained using only farm animal noises and interpretive dance, you've overengineered it. "Moo-moo-oink-CRASH" should adequately describe your microservices mesh.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 7:</div>
+            <div class="axiom-text">The best time to refactor was six months ago. The second best time is when you're about to quit. The third best time is when your replacement starts.</div>
+        </div>
+        
+        <div class="page-footer">XGH 2nd Edition - Page 4</div>
+    </div>
+
+    <!-- Velocity & Delivery Page -->
+    <div class="page content-page">
+        <div class="section-title">Velocity & Delivery (Axioms 8-14)</div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 8:</div>
+            <div class="axiom-text">Premature optimization is the root of all evil. Premature planning is the root of all delays.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 9:</div>
+            <div class="axiom-text">A panicked commit at 2 AM with the message "IT'S WORKING DON'T TOUCH ANYTHING" is worth a thousand peer reviews. If you can't explain why it works, nobody can explain why it broke. This is the path to developer enlightenment.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 10:</div>
+            <div class="axiom-text">If the demo works, the feature is done. Everything else is just polish for the perfectionists.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 11:</div>
+            <div class="axiom-text">Friday deployments build character. Character builds legends. Legends build startups.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 12:</div>
+            <div class="axiom-text">Your local environment is the source of truth. If it works on your machine, the cloud is wrong.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 13:</div>
+            <div class="axiom-text">Microservices are just a way to turn one problem into 47 distributed problems that all blame each other. It's like a dysfunctional family reunion, but with more JSON and fewer awkward hugs.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 14:</div>
+            <div class="axiom-text">Staging environments are where code goes to pretend it works before failing spectacularly in production. Skip the middleman—production IS your staging environment. Your users are just very patient beta testers who happen to pay you.</div>
+        </div>
+        
+        <div class="page-footer">XGH 2nd Edition - Page 5</div>
+    </div>
+
+    <!-- Team Dynamics Page -->
+    <div class="page content-page">
+        <div class="section-title">Team Dynamics & Communication (Axioms 15-19)</div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 15:</div>
+            <div class="axiom-text">A good developer codes with their gut and Claude. A great developer codes with their gut, Claude, and a junior developer to blame.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 16:</div>
+            <div class="axiom-text">Stand-ups are theater for management. The real work happens in bathroom conversations, elevator debugging sessions, and that one Slack DM where someone admits they don't know what their microservice actually does.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 17:</div>
+            <div class="axiom-text">Modern pair programming is you, three AI chatbots, and Stack Overflow having a four-way argument about semicolons while your rubber duck judges silently from the corner. The rubber duck is usually right, but nobody listens to it anymore.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 18:</div>
+            <div class="axiom-text">If you're not breaking things, you're a junior developer. If you're breaking everything, you're a senior developer having a bad day. If you're breaking things selectively and blaming AWS, you're ready for promotion.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 19:</div>
+            <div class="axiom-text">In code reviews, the person asking "What does this function do?" has never been oncall. The person who approves with just "LGTM 👍" has seen things that would make a kernel developer weep. Trust the quick approvers—they've transcended caring about code quality and achieved zen-like acceptance of chaos.</div>
+        </div>
+        
+        <div class="page-footer">XGH 2nd Edition - Page 6</div>
+    </div>
+
+    <!-- Architecture & Design Page -->
+    <div class="page content-page">
+        <div class="section-title">Architecture & Design (Axioms 20-23)</div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 20:</div>
+            <div class="axiom-text">Every problem can be solved by adding another layer of abstraction, middleware, or microservice. If that doesn't work, add a message queue. If that still doesn't work, blame it on eventual consistency and go home. Tomorrow's problem is tomorrow's developer's problem.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 21:</div>
+            <div class="axiom-text">Design patterns are suggestions for people who can't vibe their way to a solution. Trust the flow, embrace the spaghetti.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 22:</div>
+            <div class="axiom-text">Kubernetes is what happens when 47 Google engineers get together and ask "How can we make deploying a simple web app feel like launching a space shuttle?" The answer involves 12 YAML files, 3 existential crises, and a sacrifice to the networking gods.</div>
+        </div>
+        
+        <div class="axiom">
+            <div class="axiom-number">Axiom 23:</div>
+            <div class="axiom-text">The code that survives is not the most elegant or efficient, but the code that nobody understands well enough to delete. Write your functions like cryptic incantations—future developers will be too scared to touch them. Job security through technical debt is the highest form of developer art.</div>
+        </div>
+        
+        <div class="page-footer">XGH 2nd Edition - Page 7</div>
+    </div>
+
+    <!-- Conclusion Page -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1 class="page-title">Conclusion</h1>
+        </div>
+        
+        <p>The XGH methodology has evolved, but its core philosophy remains unchanged: software development is fundamentally about solving problems, not following processes. In a world where frameworks change faster than fashion trends and best practices become obsolete before they're fully documented, the ability to adapt and deliver remains the most valuable skill.</p>
+        
+        <p>These 23 axioms are not rules to be followed blindly, but rather guidelines to help you navigate the complex landscape of modern software development. They acknowledge the reality that sometimes you need to choose pragmatism over perfection, delivery over documentation, and results over orthodoxy.</p>
+        
+        <p>The inclusion of vibe-driven development represents a maturation of the XGH philosophy. We now recognize that developer intuition, honed through experience and AI prompting, is often more reliable than elaborate planning processes. Trust your instincts, but verify with your AI assistant of choice.</p>        
+                <p>Remember, the goal is not to write the most beautiful code or to follow every best practice perfectly. The goal is to solve real problems for real users while maintaining your sanity and your sense of humor. Sometimes that means taking shortcuts. Sometimes it means letting AI design the entire architecture and application. Always it means ensuring someone else will maintain it when it inevitably breaks.</p>        
+        <div class="final-note">
+            <strong>XGH 2nd Edition is not just a methodology—it's a lifestyle.</strong><br>
+            Code with passion, debug with coffee, and deploy with the confidence of someone who has never read their own code six months later.
+        </div>
+        
+        <div class="page-footer">XGH 2nd Edition - Page 8</div>
+    </div>
+</body>
+</html>
