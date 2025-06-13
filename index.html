@@ -134,6 +134,31 @@
             transform: translateY(-2px);
         }
 
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-links.mobile-open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            gap: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -545,8 +570,13 @@
                 display: none;
             }
             
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
             .nav {
                 padding: 1rem;
+                position: relative;
             }
             
             .hero-title {
@@ -687,6 +717,7 @@
                 <li><a href="#axioms">Axioms</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         </nav>
     </header>
 
@@ -741,73 +772,73 @@
                 <!-- Core Principles -->
                 <div class="axiom-card" data-category="core">
                     <div class="axiom-number">Axiom 1</div>
-                    <div class="axiom-text">If it compiles and the tests pass, it's basically production-ready. If it doesn't compile but the PM is breathing down your neck, comment out the broken parts and ship it anyway. The users will debug it for free.</div>
+                    <div class="axiom-text">I think, therefore it's not XGH. In XGH you don't think, you do the first thing that comes to your mind. There's not a second option as the first one is faster.</div>
                 </div>
 
                 <div class="axiom-card" data-category="core">
                     <div class="axiom-number">Axiom 2</div>
-                    <div class="axiom-text">Vibe-driven development trumps test-driven development. If the code feels right, it probably is.</div>
+                    <div class="axiom-text">There are 3 ways of solving a problem: the right way, the wrong way, and the XGH way; which is exactly like the wrong one but faster.</div>
                 </div>
 
                 <div class="axiom-card" data-category="core">
                     <div class="axiom-number">Axiom 3</div>
-                    <div class="axiom-text">ChatGPT is your senior architect. Prompt with confidence, ship with courage, maintain with delegation.</div>
+                    <div class="axiom-text">Vibe-driven development trumps test-driven development. If the code feels right, it probably is.</div>
                 </div>
 
                 <div class="axiom-card" data-category="core">
                     <div class="axiom-number">Axiom 4</div>
-                    <div class="axiom-text">Documentation is what AI generates when you paste your code and ask "please document this mess."</div>
+                    <div class="axiom-text">XGH is completely reactive. Errors only come to exist when someone notices them.</div>
                 </div>
 
                 <div class="axiom-card" data-category="core">
                     <div class="axiom-number">Axiom 5</div>
-                    <div class="axiom-text">Technical debt is just future job security. Thank your past self for the guaranteed employment.</div>
+                    <div class="axiom-text">In XGH anything goes. It solves the problem? It compiled? You commit it and don't think about it anymore.</div>
                 </div>
 
                 <div class="axiom-card" data-category="core">
                     <div class="axiom-number">Axiom 6</div>
-                    <div class="axiom-text">If your system architecture can't be explained using only farm animal noises and interpretive dance, you've overengineered it. "Moo-moo-oink-CRASH" should adequately describe your microservices mesh.</div>
+                    <div class="axiom-text">You commit always before updating. If things go wrong your part will always be correct... and your colleagues will be the ones dealing with the problems.</div>
                 </div>
 
                 <div class="axiom-card" data-category="core">
                     <div class="axiom-number">Axiom 7</div>
-                    <div class="axiom-text">The best time to refactor was six months ago. The second best time is when you're about to quit. The third best time is when your replacement starts.</div>
+                    <div class="axiom-text">Copy-paste from AI chat is not just allowed, it's encouraged. Why reinvent the wheel when an AI already invented a perfectly good wheel for you?</div>
                 </div>
 
                 <!-- Velocity & Delivery -->
                 <div class="axiom-card" data-category="velocity">
                     <div class="axiom-number">Axiom 8</div>
-                    <div class="axiom-text">Premature optimization is the root of all evil. Premature planning is the root of all delays.</div>
+                    <div class="axiom-text">XGH doesn't have schedules. You will ALWAYS be able to implement EVERYTHING in time (even if that means accessing the database through some crazy script).</div>
                 </div>
 
                 <div class="axiom-card" data-category="velocity">
                     <div class="axiom-number">Axiom 9</div>
-                    <div class="axiom-text">A panicked commit at 2 AM with the message "IT'S WORKING DON'T TOUCH ANYTHING" is worth a thousand peer reviews. If you can't explain why it works, nobody can explain why it broke.</div>
+                    <div class="axiom-text">You'll always need to do more and more XGH. For every bug solved using XGH, seven more are created. As all of them will be solved using XGH, its utility tends to the infinite.</div>
                 </div>
 
                 <div class="axiom-card" data-category="velocity">
                     <div class="axiom-number">Axiom 10</div>
-                    <div class="axiom-text">If the demo works, the feature is done. Everything else is just polish for the perfectionists.</div>
+                    <div class="axiom-text">XGH is absolute. Delivery dates and costs are absolute things. Quality is relative. Never think about quality but instead think about the minimum time required to implement a solution.</div>
                 </div>
 
                 <div class="axiom-card" data-category="velocity">
                     <div class="axiom-number">Axiom 11</div>
-                    <div class="axiom-text">Friday deployments build character. Character builds legends. Legends build startups.</div>
+                    <div class="axiom-text">Tests are for people who don't trust their AI copilot. If you know what you're doing, then why test? If it compiles, it's good.</div>
                 </div>
 
                 <div class="axiom-card" data-category="velocity">
                     <div class="axiom-number">Axiom 12</div>
-                    <div class="axiom-text">Your local environment is the source of truth. If it works on your machine, the cloud is wrong.</div>
+                    <div class="axiom-text">There's no refactoring, just rework. If things ever go wrong just use XGH to quickly solve the problem. When the problem requires rewriting the whole software it's time to drop off.</div>
                 </div>
 
                 <div class="axiom-card" data-category="velocity">
                     <div class="axiom-number">Axiom 13</div>
-                    <div class="axiom-text">Microservices are just a way to turn one problem into 47 distributed problems that all blame each other. It's like a dysfunctional family reunion, but with more JSON and fewer awkward hugs.</div>
+                    <div class="axiom-text">Be used to the 'living on the edge' feeling. The project failed? You learned something with it? Then for you it was a success!</div>
                 </div>
 
                 <div class="axiom-card" data-category="velocity">
                     <div class="axiom-number">Axiom 14</div>
-                    <div class="axiom-text">Staging environments are where code goes to pretend it works before failing spectacularly in production. Skip the middleman—production IS your staging environment.</div>
+                    <div class="axiom-text">If it's working don't bother. Never ever change—or even think of questioning—a working code. That's a complete waste of time.</div>
                 </div>
 
                 <!-- Team Dynamics -->
@@ -818,43 +849,43 @@
 
                 <div class="axiom-card" data-category="team">
                     <div class="axiom-number">Axiom 16</div>
-                    <div class="axiom-text">Stand-ups are theater for management. The real work happens in bathroom conversations, elevator debugging sessions, and that one Slack DM where someone admits they don't know what their microservice actually does.</div>
+                    <div class="axiom-text">Be ready to jump ship or blame someone else when it goes down. For people using XGH someday the ship goes down. When that day comes, you'd better have your resume ready.</div>
                 </div>
 
                 <div class="axiom-card" data-category="team">
                     <div class="axiom-number">Axiom 17</div>
-                    <div class="axiom-text">Modern pair programming is you, three AI chatbots, and Stack Overflow having a four-way argument about semicolons while your rubber duck judges silently from the corner.</div>
+                    <div class="axiom-text">Don't try to go against the tide. If your colleagues use XGH and you are the only one who wants to do things the right way then quit it!</div>
                 </div>
 
                 <div class="axiom-card" data-category="team">
                     <div class="axiom-number">Axiom 18</div>
-                    <div class="axiom-text">If you're not breaking things, you're a junior developer. If you're breaking everything, you're a senior developer having a bad day. If you're breaking things selectively and blaming AWS, you're ready for promotion.</div>
+                    <div class="axiom-text">The problem is only yours when your name is on the code docs. Never touch code which you're not the author. When a team member leaves, it will eventually go down.</div>
                 </div>
 
                 <div class="axiom-card" data-category="team">
                     <div class="axiom-number">Axiom 19</div>
-                    <div class="axiom-text">In code reviews, the person asking "What does this function do?" has never been oncall. The person who approves with just "LGTM 👍" has seen things that would make a kernel developer weep.</div>
+                    <div class="axiom-text">XGH is anarchic. There's no need for a project manager. There's no owner and everyone does whatever they want when problems and requirements appear.</div>
                 </div>
 
                 <!-- Architecture -->
                 <div class="axiom-card" data-category="architecture">
                     <div class="axiom-number">Axiom 20</div>
-                    <div class="axiom-text">Every problem can be solved by adding another layer of abstraction, middleware, or microservice. If that doesn't work, add a message queue. If that still doesn't work, blame it on eventual consistency and go home.</div>
+                    <div class="axiom-text">Be authentic. XGH doesn't follow patterns. Write code as you see fit. If it solves the problem, commit and forget about it.</div>
                 </div>
 
                 <div class="axiom-card" data-category="architecture">
                     <div class="axiom-number">Axiom 21</div>
-                    <div class="axiom-text">Design patterns are suggestions for people who can't vibe their way to a solution. Trust the flow, embrace the spaghetti.</div>
+                    <div class="axiom-text">Always believe in improvement promises. Putting TODO comments in the code helps the XGH developer not feel guilt. Surely there won't be any refactoring.</div>
                 </div>
 
                 <div class="axiom-card" data-category="architecture">
                     <div class="axiom-number">Axiom 22</div>
-                    <div class="axiom-text">Kubernetes is what happens when 47 Google engineers get together and ask "How can we make deploying a simple web app feel like launching a space shuttle?" The answer involves 12 YAML files, 3 existential crises, and a sacrifice to the networking gods.</div>
+                    <div class="axiom-text">XGH is your bro. But it's vengeful. If you start with XGH and then turn to some trendy methodology you will be screwed. XGH doesn't allow refactoring.</div>
                 </div>
 
                 <div class="axiom-card" data-category="architecture">
                     <div class="axiom-number">Axiom 23</div>
-                    <div class="axiom-text">The code that survives is not the most elegant or efficient, but the code that nobody understands well enough to delete. Write your functions like cryptic incantations—future developers will be too scared to touch them.</div>
+                    <div class="axiom-text">XGH is not dangerous until you see some order in it. A XGH project is always in chaos. Don't try to put order into XGH as it's useless and will make things go down faster.</div>
                 </div>
             </div>
         </div>
@@ -884,6 +915,12 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile-open');
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
