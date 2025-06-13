@@ -3,549 +3,967 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XGH 2nd Edition - Complete Document</title>
+    <title>XGH 2nd Edition - eXtreme Go Horse</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap');
-        
-        body {
-            font-family: 'Times New Roman', serif;
-            background: #ffffff;
+        * {
             margin: 0;
             padding: 0;
-            color: #000;
-            line-height: 1.6;
-        }
-        
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 0 auto;
-            padding: 25mm;
             box-sizing: border-box;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            page-break-after: always;
         }
-        
-        .page:last-child {
-            page-break-after: auto;
-        }
-        
-        /* O'Reilly Cover Styles */
-        .oreilly-cover {
-            background: linear-gradient(135deg, #00D4AA 0%, #00B894 50%, #00A085 100%);
-            border: 4px solid #2C1810;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 30px;
-            position: relative;
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.1);
-        }
-        
-        .oreilly-header {
-            text-align: left;
-            background: rgba(255,255,255,0.9);
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 2px solid #2C1810;
-        }
-        
-        .oreilly-logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: #00A085;
-            margin-bottom: 5px;
-            font-family: 'Times New Roman', serif;
-            text-shadow: 2px 2px 0px #2C1810;
-        }
-        
-        .oreilly-tagline {
-            font-size: 14px;
-            color: #2C1810;
-            font-style: italic;
-            font-weight: 600;
-        }
-        
-        .animal-section {
-            text-align: center;
-            margin: 30px 0;
-            background: rgba(255,255,255,0.8);
-            padding: 30px;
-            border-radius: 15px;
-            border: 3px solid #2C1810;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        
-        .animal-illustration {
-            font-size: 120px;
-            line-height: 1;
-            margin-bottom: 15px;
-            filter: drop-shadow(3px 3px 0px #2C1810);
-            animation: gallop 1.5s infinite ease-in-out;
-        }
-        
-        @keyframes gallop {
-            0%, 100% {
-                transform: translateX(0) rotate(0deg);
-            }
-            25% {
-                transform: translateX(-8px) rotate(-2deg);
-            }
-            50% {
-                transform: translateX(0) rotate(0deg) scale(1.1);
-            }
-            75% {
-                transform: translateX(8px) rotate(2deg);
-            }
-        }
-        
-        .animal-caption {
-            font-size: 16px;
-            color: #2C1810;
-            font-style: italic;
-            font-weight: 600;
-            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
-        }
-        
-        .book-title-section {
-            text-align: left;
-            margin: 20px 0;
-            background: rgba(255,255,255,0.9);
-            padding: 25px;
-            border-radius: 10px;
-            border: 3px solid #2C1810;
-        }
-        
-        .main-title {
-            font-size: 64px;
-            font-weight: 700;
-            color: #00A085;
-            margin-bottom: 10px;
-            line-height: 1;
-            text-shadow: 3px 3px 0px #2C1810;
-            letter-spacing: -2px;
-        }
-        
-        .subtitle {
-            font-size: 24px;
-            color: #2C1810;
-            margin-bottom: 8px;
-            font-weight: 600;
-            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
-        }
-        
-        .subtitle-small {
-            font-size: 18px;
-            color: #00B894;
-            margin-bottom: 15px;
-            font-style: italic;
-            font-weight: 600;
-        }
-        
-        .description {
-            font-size: 15px;
-            line-height: 1.4;
-            color: #2C1810;
-            text-align: justify;
-            font-weight: 500;
-        }
-        
-        .oreilly-footer {
-            text-align: left;
-            background: rgba(255,255,255,0.9);
-            padding: 20px;
-            border-radius: 8px;
-            border: 2px solid #2C1810;
-        }
-        
-        .author-line {
-            font-size: 16px;
-            color: #00A085;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .edition-line {
-            font-size: 14px;
-            color: #2C1810;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        
-        .publisher {
-            font-size: 20px;
-            font-weight: 700;
-            color: #00A085;
-            text-align: right;
-            text-shadow: 2px 2px 0px #2C1810;
-        }
-        
-        /* Content Page Styles */
-        .content-page {
-            text-align: left;
-        }
-        
-        .page-header {
-            border-bottom: 2px solid #000;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-        }
-        
-        .page-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0;
-        }
-        
-        .section-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 40px 0 20px 0;
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: 
+                radial-gradient(circle at 20% 80%, #ff006e 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #00d4aa 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, #8338ec 0%, transparent 50%),
+                radial-gradient(circle at 60% 80%, #ff8500 0%, transparent 50%),
+                radial-gradient(circle at 90% 70%, #3a86ff 0%, transparent 50%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #e94560 100%);
             color: #333;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
         }
         
-        .axiom {
-            margin-bottom: 25px;
-            padding: 15px;
-            background: #f9f9f9;
-            border-left: 4px solid #333;
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 255, 255, 0.03) 2px,
+                    rgba(0, 255, 255, 0.03) 4px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 0, 255, 0.03) 2px,
+                    rgba(255, 0, 255, 0.03) 4px
+                );
+            pointer-events: none;
+            z-index: -1;
+            animation: matrix-rain 20s linear infinite;
         }
         
-        .axiom-number {
-            font-weight: 700;
-            color: #000;
-            font-size: 16px;
+        body::after {
+            content: '< /> { } [ ] ( ) === !== && || ! ? : ; , . + - * / % ++ -- => ... async await const let var function class extends import export default null undefined true false 0x1337 404 500 200 git push origin main npm install --save-dev console.log JSON.stringify try catch finally throw new Error setTimeout setInterval Promise.resolve then catch async/await fetch API REST GraphQL SQL NoSQL MongoDB PostgreSQL Redis Docker Kubernetes AWS Azure GCP CI/CD DevOps Agile Scrum Kanban TDD BDD DDD SOLID YAGNI DRY KISS WET NIH microservices monolith serverless edge computing blockchain AI ML deep learning neural networks React Vue Angular Node.js Express Django Flask Rails Spring Boot Laravel .NET Java Python JavaScript TypeScript Rust Go C++ C# PHP Ruby Kotlin Swift Dart Haskell Clojure Scala Elixir F# WebAssembly PWA SPA SSR SSG JAMstack CDN DNS HTTP HTTPS SSL TLS OAuth JWT REST GraphQL gRPC TCP UDP IP MAC RAM CPU GPU SSD HDD API SDK CLI GUI UX UI A/B testing analytics metrics KPIs OKRs GDPR CCPA PCI DSS HIPAA SOC2 ISO27001 penetration testing security audit code review pair programming mob programming rubber duck debugging stack overflow github gitlab bitbucket jira confluence slack discord teams zoom meet hangouts';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: rgba(0, 255, 0, 0.1);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.2;
+            pointer-events: none;
+            z-index: -1;
+            animation: code-matrix 60s linear infinite;
+            transform: rotate(-15deg);
+            overflow: hidden;
         }
         
-        .axiom-text {
-            margin: 5px 0 0 0;
-            font-size: 14px;
-            line-height: 1.5;
+        @keyframes matrix-rain {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(100px) rotate(360deg); }
         }
         
-        .page-footer {
-            display: none;
+        @keyframes code-matrix {
+            0% { transform: rotate(-15deg) translateX(-50%) translateY(-50%); }
+            100% { transform: rotate(-15deg) translateX(-60%) translateY(-60%); }
         }
-        
-        .toc {
-            margin: 30px 0;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
-        .toc-item {
-            margin: 10px 0;
-            font-size: 14px;
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-        
-        .toc-dots {
-            border-bottom: 1px dotted #ccc;
-            flex: 1;
-            margin: 0 10px;
-        }
-        
-        .toc-item-content {
+
+        .nav {
             display: flex;
-            align-items: baseline;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
         }
-        
-        .final-note {
-            margin-top: 40px;
-            padding: 20px;
-            background: #f0f0f0;
-            border: 1px solid #ccc;
-            font-style: italic;
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #00D4AA;
+            text-decoration: none;
+            text-shadow: 0 0 20px rgba(0, 212, 170, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00D4AA;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00D4AA;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-conic-gradient(from 0deg at 50% 50%, 
+                    transparent 0deg, 
+                    rgba(0, 255, 255, 0.1) 15deg, 
+                    transparent 30deg, 
+                    rgba(255, 0, 255, 0.1) 45deg, 
+                    transparent 60deg
+                );
+            animation: rotate-background 30s linear infinite;
+        }
+
+        .hero::after {
+            content: '⚡ 🚀 💻 🔥 ⭐ 🎯 💡 🌟 ⚡ 🚀 💻 🔥 ⭐ 🎯 💡 🌟 ⚡ 🚀 💻 🔥 ⭐ 🎯 💡 🌟 ⚡ 🚀 💻 🔥 ⭐ 🎯 💡 🌟';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float-emojis 25s linear infinite;
+            pointer-events: none;
+            white-space: pre-wrap;
+            word-spacing: 3rem;
+            line-height: 4rem;
+            z-index: 1;
+        }
+
+        @keyframes rotate-background {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        @keyframes float-emojis {
+            0% { transform: translateX(-50%) translateY(-50%) rotate(0deg); }
+            100% { transform: translateX(-60%) translateY(-60%) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 
+                0 0 10px #00ff00,
+                0 0 20px #00ff00,
+                0 0 30px #00ff00,
+                0 0 40px #00ff00,
+                0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: rainbow-glow 3s ease-in-out infinite alternate;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.1em;
+        }
+
+        @keyframes rainbow-glow {
+            0% { 
+                text-shadow: 
+                    0 0 10px #ff0080,
+                    0 0 20px #ff0080,
+                    0 0 30px #ff0080,
+                    0 0 40px #ff0080,
+                    0 10px 30px rgba(0, 0, 0, 0.3);
+                color: #ff0080;
+            }
+            25% { 
+                text-shadow: 
+                    0 0 10px #00ff80,
+                    0 0 20px #00ff80,
+                    0 0 30px #00ff80,
+                    0 0 40px #00ff80,
+                    0 10px 30px rgba(0, 0, 0, 0.3);
+                color: #00ff80;
+            }
+            50% { 
+                text-shadow: 
+                    0 0 10px #8000ff,
+                    0 0 20px #8000ff,
+                    0 0 30px #8000ff,
+                    0 0 40px #8000ff,
+                    0 10px 30px rgba(0, 0, 0, 0.3);
+                color: #8000ff;
+            }
+            75% { 
+                text-shadow: 
+                    0 0 10px #ff8000,
+                    0 0 20px #ff8000,
+                    0 0 30px #ff8000,
+                    0 0 40px #ff8000,
+                    0 10px 30px rgba(0, 0, 0, 0.3);
+                color: #ff8000;
+            }
+            100% { 
+                text-shadow: 
+                    0 0 10px #0080ff,
+                    0 0 20px #0080ff,
+                    0 0 30px #0080ff,
+                    0 0 40px #0080ff,
+                    0 10px 30px rgba(0, 0, 0, 0.3);
+                color: #0080ff;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            animation: subtitle-pulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes subtitle-pulse {
+            from { text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); }
+            to { text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.3); }
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff006e, #00d4aa, #8338ec, #ff8500);
+            background-size: 300% 300%;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 10px 30px rgba(0, 212, 170, 0.3),
+                0 0 20px rgba(255, 0, 110, 0.4);
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: button-rainbow 3s ease-in-out infinite;
+        }
+
+        @keyframes button-rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(0, 212, 170, 0.4),
+                0 0 30px rgba(255, 0, 110, 0.6),
+                0 0 40px rgba(131, 56, 236, 0.3);
+            animation: button-rainbow 1s ease-in-out infinite;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Horse Animation */
+        .horse {
+            position: absolute;
+            font-size: 6rem;
+            animation: epic-gallop 4s infinite ease-in-out;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            filter: 
+                drop-shadow(0 0 20px rgba(255, 0, 128, 0.8))
+                drop-shadow(0 0 40px rgba(0, 255, 255, 0.6))
+                drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+            z-index: 10;
+        }
+
+        @keyframes epic-gallop {
+            0%, 100% { 
+                transform: translateX(-50%) translateY(0) rotate(0deg) scale(1);
+                filter: 
+                    drop-shadow(0 0 20px rgba(255, 0, 128, 0.8))
+                    drop-shadow(0 0 40px rgba(0, 255, 255, 0.6))
+                    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+            }
+            25% { 
+                transform: translateX(-60%) translateY(-20px) rotate(-10deg) scale(0.9);
+                filter: 
+                    drop-shadow(0 0 30px rgba(0, 255, 0, 0.8))
+                    drop-shadow(0 0 50px rgba(255, 255, 0, 0.6))
+                    drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+            }
+            50% { 
+                transform: translateX(-50%) translateY(-40px) rotate(0deg) scale(1.3);
+                filter: 
+                    drop-shadow(0 0 40px rgba(255, 0, 255, 0.9))
+                    drop-shadow(0 0 60px rgba(0, 255, 128, 0.7))
+                    drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+            }
+            75% { 
+                transform: translateX(-40%) translateY(-20px) rotate(10deg) scale(0.9);
+                filter: 
+                    drop-shadow(0 0 30px rgba(255, 128, 0, 0.8))
+                    drop-shadow(0 0 50px rgba(128, 0, 255, 0.6))
+                    drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-dark {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #00D4AA, #00B894);
+            border-radius: 2px;
+        }
+
+        /* Axioms Grid */
+        .axioms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .axiom-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 170, 0.1);
+        }
+
+        .section-dark .axiom-card {
+            background: #2a2a2a;
+            color: white;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+        }
+
+        .axiom-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .axiom-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, #00D4AA, #00B894);
+        }
+
+        .axiom-number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #00D4AA;
+            margin-bottom: 1rem;
+        }
+
+        .axiom-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .section-dark .axiom-text {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 0.8rem 1.8rem;
+            background: transparent;
+            border: 2px solid #00D4AA;
+            color: #00D4AA;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .category-tab.active,
+        .category-tab:hover {
+            background: #00D4AA;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #00D4AA;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .nav {
+                padding: 1rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+                letter-spacing: 0.05em;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .horse {
+                font-size: 4rem;
+                top: 75%;
+            }
+            
+            .axioms-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .axiom-card {
+                padding: 1.5rem;
+            }
+            
+            .category-tabs {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .category-tab {
+                padding: 0.6rem 1.4rem;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            /* Reduce background effects on mobile for performance */
+            body::before,
+            body::after {
+                opacity: 0.5;
+                animation-duration: 40s;
+            }
+            
+            .hero::before {
+                animation-duration: 40s;
+            }
+            
+            .hero::after {
+                font-size: 1.5rem;
+                opacity: 0.05;
+            }
         }
         
-        @media print {
-            body { margin: 0; }
-            .page { 
-                box-shadow: none; 
-                margin: 0;
-                width: 100%;
-                min-height: 100vh;
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.5rem;
             }
-            .page-footer {
-                position: fixed;
-                bottom: 0;
+            
+            .hero-subtitle {
+                font-size: 1rem;
             }
+            
+            .horse {
+                font-size: 3rem;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .axiom-card {
+                padding: 1rem;
+            }
+            
+            .axiom-number {
+                font-size: 1.2rem;
+            }
+            
+            .axiom-text {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 212, 170, 0.2);
+            z-index: 1001;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00D4AA, #00B894);
+            width: 0%;
+            transition: width 0.1s ease;
         }
     </style>
 </head>
 <body>
-    <!-- Cover Page -->
-    <div class="page oreilly-cover">
-        <div class="oreilly-header">
-            <div class="oreilly-logo">O'RLY?</div>
-            <div class="oreilly-tagline">For when your AI is hallucinating</div>
-        </div>
-        
-        <div class="animal-section">
-            <div class="animal-illustration">
-                🐴
-            </div>
-            <div class="animal-caption">The Caffeinated Horse</div>
-        </div>
-        
-        <div class="book-title-section">
-            <div class="main-title">XGH</div>
-            <div class="subtitle">eXtreme Go Horse</div>
-            <div class="subtitle-small">Second Edition</div>
-            <div class="description">
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">XGH</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#axioms">Axioms</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">XGH</h1>
+            <h2 class="hero-subtitle">eXtreme Go Horse</h2>
+            <p class="hero-description">
                 A comprehensive guide to vibe-driven development, AI-assisted coding, and the ancient art of making it someone else's problem
+            </p>
+            <a href="#axioms" class="cta-button">Explore the Axioms</a>
+        </div>
+        <div class="horse">🐴</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section section-white" id="about">
+        <div class="container">
+            <h2 class="section-title">About XGH 2nd Edition</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
+                <p style="margin-bottom: 2rem;">
+                    The <strong>XGH (eXtreme Go Horse)</strong> methodology was originally conceptualized by Brazilian developers and documented in the legendary <a href="https://medium.com/@dekaah/22-axioms-of-the-extreme-go-horse-methodology-xgh-9fa739ab55b4" target="_blank" style="color: #00D4AA; text-decoration: none; font-weight: 600;">22 Axioms of the Extreme Go Horse Methodology</a>. It revolutionized software development by acknowledging what every developer knew but few dared to say: sometimes you just need to get things done, regardless of best practices.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    This second edition builds upon those foundational principles while incorporating the realities of modern software development. We now live in an era of cloud-native applications, microservices architectures, AI-assisted coding, and most importantly, <strong>vibe-driven development</strong>.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    The original XGH philosophy emerged from the trenches of real-world software development, where developers learned that pragmatism often trumps perfection. This updated edition expands from 22 to 23 axioms, adding modern context for the post-AI era while maintaining the irreverent spirit that made XGH a cult classic among developers worldwide.
+                </p>
+                <p>
+                    Whether you're dealing with Kubernetes clusters that have achieved sentience, microservices that communicate through passive-aggressive error messages, or stakeholders who change requirements faster than you can implement them, these axioms will guide you through the chaos with humor and hard-won wisdom.
+                </p>
             </div>
         </div>
-        
-        <div class="oreilly-footer">
-            <div class="author-line">By The Collective Consciousness of Staff Engineers</div>
-            <div class="edition-line">Revised for the Post-AI Era • June 2025</div>
-            <div class="publisher">O'RLY? Media</div>
-        </div>
-    </div>
+    </section>
 
-    <!-- Table of Contents -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1 class="page-title">Table of Contents</h1>
-        </div>
-        
-        <div class="toc">
-            <div class="toc-item">
-                <div class="toc-item-content">
-                    <span>Introduction</span>
-                    <div class="toc-dots"></div>
-                    <span>3</span>
+    <!-- Axioms Section -->
+    <section class="section section-dark" id="axioms">
+        <div class="container">
+            <h2 class="section-title">The 23 Axioms</h2>
+            
+            <div class="category-tabs">
+                <button class="category-tab active" onclick="showCategory('all')">All Axioms</button>
+                <button class="category-tab" onclick="showCategory('core')">Core Principles</button>
+                <button class="category-tab" onclick="showCategory('velocity')">Velocity & Delivery</button>
+                <button class="category-tab" onclick="showCategory('team')">Team Dynamics</button>
+                <button class="category-tab" onclick="showCategory('architecture')">Architecture</button>
+            </div>
+
+            <div class="axioms-grid" id="axiomsGrid">
+                <!-- Core Principles -->
+                <div class="axiom-card" data-category="core">
+                    <div class="axiom-number">Axiom 1</div>
+                    <div class="axiom-text">If it compiles and the tests pass, it's basically production-ready. If it doesn't compile but the PM is breathing down your neck, comment out the broken parts and ship it anyway. The users will debug it for free.</div>
+                </div>
+
+                <div class="axiom-card" data-category="core">
+                    <div class="axiom-number">Axiom 2</div>
+                    <div class="axiom-text">Vibe-driven development trumps test-driven development. If the code feels right, it probably is.</div>
+                </div>
+
+                <div class="axiom-card" data-category="core">
+                    <div class="axiom-number">Axiom 3</div>
+                    <div class="axiom-text">ChatGPT is your senior architect. Prompt with confidence, ship with courage, maintain with delegation.</div>
+                </div>
+
+                <div class="axiom-card" data-category="core">
+                    <div class="axiom-number">Axiom 4</div>
+                    <div class="axiom-text">Documentation is what AI generates when you paste your code and ask "please document this mess."</div>
+                </div>
+
+                <div class="axiom-card" data-category="core">
+                    <div class="axiom-number">Axiom 5</div>
+                    <div class="axiom-text">Technical debt is just future job security. Thank your past self for the guaranteed employment.</div>
+                </div>
+
+                <div class="axiom-card" data-category="core">
+                    <div class="axiom-number">Axiom 6</div>
+                    <div class="axiom-text">If your system architecture can't be explained using only farm animal noises and interpretive dance, you've overengineered it. "Moo-moo-oink-CRASH" should adequately describe your microservices mesh.</div>
+                </div>
+
+                <div class="axiom-card" data-category="core">
+                    <div class="axiom-number">Axiom 7</div>
+                    <div class="axiom-text">The best time to refactor was six months ago. The second best time is when you're about to quit. The third best time is when your replacement starts.</div>
+                </div>
+
+                <!-- Velocity & Delivery -->
+                <div class="axiom-card" data-category="velocity">
+                    <div class="axiom-number">Axiom 8</div>
+                    <div class="axiom-text">Premature optimization is the root of all evil. Premature planning is the root of all delays.</div>
+                </div>
+
+                <div class="axiom-card" data-category="velocity">
+                    <div class="axiom-number">Axiom 9</div>
+                    <div class="axiom-text">A panicked commit at 2 AM with the message "IT'S WORKING DON'T TOUCH ANYTHING" is worth a thousand peer reviews. If you can't explain why it works, nobody can explain why it broke.</div>
+                </div>
+
+                <div class="axiom-card" data-category="velocity">
+                    <div class="axiom-number">Axiom 10</div>
+                    <div class="axiom-text">If the demo works, the feature is done. Everything else is just polish for the perfectionists.</div>
+                </div>
+
+                <div class="axiom-card" data-category="velocity">
+                    <div class="axiom-number">Axiom 11</div>
+                    <div class="axiom-text">Friday deployments build character. Character builds legends. Legends build startups.</div>
+                </div>
+
+                <div class="axiom-card" data-category="velocity">
+                    <div class="axiom-number">Axiom 12</div>
+                    <div class="axiom-text">Your local environment is the source of truth. If it works on your machine, the cloud is wrong.</div>
+                </div>
+
+                <div class="axiom-card" data-category="velocity">
+                    <div class="axiom-number">Axiom 13</div>
+                    <div class="axiom-text">Microservices are just a way to turn one problem into 47 distributed problems that all blame each other. It's like a dysfunctional family reunion, but with more JSON and fewer awkward hugs.</div>
+                </div>
+
+                <div class="axiom-card" data-category="velocity">
+                    <div class="axiom-number">Axiom 14</div>
+                    <div class="axiom-text">Staging environments are where code goes to pretend it works before failing spectacularly in production. Skip the middleman—production IS your staging environment.</div>
+                </div>
+
+                <!-- Team Dynamics -->
+                <div class="axiom-card" data-category="team">
+                    <div class="axiom-number">Axiom 15</div>
+                    <div class="axiom-text">A good developer codes with their gut and Claude. A great developer codes with their gut, Claude, and a junior developer to blame.</div>
+                </div>
+
+                <div class="axiom-card" data-category="team">
+                    <div class="axiom-number">Axiom 16</div>
+                    <div class="axiom-text">Stand-ups are theater for management. The real work happens in bathroom conversations, elevator debugging sessions, and that one Slack DM where someone admits they don't know what their microservice actually does.</div>
+                </div>
+
+                <div class="axiom-card" data-category="team">
+                    <div class="axiom-number">Axiom 17</div>
+                    <div class="axiom-text">Modern pair programming is you, three AI chatbots, and Stack Overflow having a four-way argument about semicolons while your rubber duck judges silently from the corner.</div>
+                </div>
+
+                <div class="axiom-card" data-category="team">
+                    <div class="axiom-number">Axiom 18</div>
+                    <div class="axiom-text">If you're not breaking things, you're a junior developer. If you're breaking everything, you're a senior developer having a bad day. If you're breaking things selectively and blaming AWS, you're ready for promotion.</div>
+                </div>
+
+                <div class="axiom-card" data-category="team">
+                    <div class="axiom-number">Axiom 19</div>
+                    <div class="axiom-text">In code reviews, the person asking "What does this function do?" has never been oncall. The person who approves with just "LGTM 👍" has seen things that would make a kernel developer weep.</div>
+                </div>
+
+                <!-- Architecture -->
+                <div class="axiom-card" data-category="architecture">
+                    <div class="axiom-number">Axiom 20</div>
+                    <div class="axiom-text">Every problem can be solved by adding another layer of abstraction, middleware, or microservice. If that doesn't work, add a message queue. If that still doesn't work, blame it on eventual consistency and go home.</div>
+                </div>
+
+                <div class="axiom-card" data-category="architecture">
+                    <div class="axiom-number">Axiom 21</div>
+                    <div class="axiom-text">Design patterns are suggestions for people who can't vibe their way to a solution. Trust the flow, embrace the spaghetti.</div>
+                </div>
+
+                <div class="axiom-card" data-category="architecture">
+                    <div class="axiom-number">Axiom 22</div>
+                    <div class="axiom-text">Kubernetes is what happens when 47 Google engineers get together and ask "How can we make deploying a simple web app feel like launching a space shuttle?" The answer involves 12 YAML files, 3 existential crises, and a sacrifice to the networking gods.</div>
+                </div>
+
+                <div class="axiom-card" data-category="architecture">
+                    <div class="axiom-number">Axiom 23</div>
+                    <div class="axiom-text">The code that survives is not the most elegant or efficient, but the code that nobody understands well enough to delete. Write your functions like cryptic incantations—future developers will be too scared to touch them.</div>
                 </div>
             </div>
-            <div class="toc-item">
-                <div class="toc-item-content">
-                    <span>Core Principles (Axioms 1-7)</span>
-                    <div class="toc-dots"></div>
-                    <span>4</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>XGH Methodology</h3>
+                    <p>Embracing chaos since the dawn of software development. Making pragmatism cool again.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Second Edition</h3>
+                    <p>Revised for the Post-AI Era, featuring vibe-driven development and modern survival tactics.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Remember</h3>
+                    <p>Code with passion, debug with coffee, and deploy with the confidence of someone who has never read their own code six months later.</p>
                 </div>
             </div>
-            <div class="toc-item">
-                <div class="toc-item-content">
-                    <span>Velocity & Delivery (Axioms 8-14)</span>
-                    <div class="toc-dots"></div>
-                    <span>5</span>
-                </div>
-            </div>
-            <div class="toc-item">
-                <div class="toc-item-content">
-                    <span>Team Dynamics & Communication (Axioms 15-19)</span>
-                    <div class="toc-dots"></div>
-                    <span>6</span>
-                </div>
-            </div>
-            <div class="toc-item">
-                <div class="toc-item-content">
-                    <span>Architecture & Design (Axioms 20-23)</span>
-                    <div class="toc-dots"></div>
-                    <span>7</span>
-                </div>
-            </div>
-            <div class="toc-item">
-                <div class="toc-item-content">
-                    <span>Conclusion</span>
-                    <div class="toc-dots"></div>
-                    <span>8</span>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Collective Consciousness of Staff Engineers. XGH is not just a methodology—it's a lifestyle.</p>
             </div>
         </div>
-        
-        <div class="page-footer">XGH 2nd Edition - Page 2</div>
-    </div>
+    </footer>
 
-    <!-- Introduction Page -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1 class="page-title">Introduction</h1>
-        </div>
-        
-        <p>The original XGH (eXtreme Go Horse) methodology revolutionized software development by acknowledging what every developer knew but few dared to say: sometimes you just need to get things done, regardless of best practices.</p>
-        
-        <p>This second edition builds upon the foundational principles of XGH while incorporating the realities of modern software development. We now live in an era of cloud-native applications, microservices architectures, continuous integration pipelines, and most importantly, vibe-driven development.</p>
-        
-        <p>Vibe-coding represents the natural evolution of developer intuition. It's the recognition that sometimes the best solutions come not from rigorous analysis or extensive planning, but from that moment when a developer looks at a problem and just <em>knows</em> what needs to be done.</p>
-        
-        <p>The 23 axioms in this edition reflect the accumulated wisdom of countless developers who have learned to navigate the complex landscape of modern software development while maintaining their sanity and their sense of humor.</p>
-        
-        <p>Whether you're dealing with Kubernetes clusters that have achieved sentience, microservices that communicate through passive-aggressive error messages, or stakeholders who change requirements faster than you can implement them, these axioms will guide you through the chaos.</p>
-        
-        <p>Remember: XGH is not just about cutting corners—it's about cutting the <em>right</em> corners at the <em>right</em> time. It's about understanding that perfect is the enemy of shipped, and shipped is the enemy of unemployed.</p>
-        
-        <div class="page-footer">XGH 2nd Edition - Page 3</div>
-    </div>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    <!-- Core Principles Page -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1 class="page-title">The 23 Axioms of XGH 2nd Edition</h1>
-        </div>
-        
-        <div class="section-title">Core Principles (Axioms 1-7)</div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 1:</div>
-            <div class="axiom-text">If it compiles and the tests pass, it's basically production-ready. If it doesn't compile but the PM is breathing down your neck, comment out the broken parts and ship it anyway. The users will debug it for free.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 2:</div>
-            <div class="axiom-text">Vibe-driven development trumps test-driven development. If the code feels right, it probably is.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 3:</div>
-            <div class="axiom-text">ChatGPT is your senior architect. Prompt with confidence, ship with courage, maintain with delegation.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 4:</div>
-            <div class="axiom-text">Documentation is what AI generates when you paste your code and ask "please document this mess."</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 5:</div>
-            <div class="axiom-text">Technical debt is just future job security. Thank your past self for the guaranteed employment.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 6:</div>
-            <div class="axiom-text">If your system architecture can't be explained using only farm animal noises and interpretive dance, you've overengineered it. "Moo-moo-oink-CRASH" should adequately describe your microservices mesh.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 7:</div>
-            <div class="axiom-text">The best time to refactor was six months ago. The second best time is when you're about to quit. The third best time is when your replacement starts.</div>
-        </div>
-        
-        <div class="page-footer">XGH 2nd Edition - Page 4</div>
-    </div>
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight * 100;
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+        });
 
-    <!-- Velocity & Delivery Page -->
-    <div class="page content-page">
-        <div class="section-title">Velocity & Delivery (Axioms 8-14)</div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 8:</div>
-            <div class="axiom-text">Premature optimization is the root of all evil. Premature planning is the root of all delays.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 9:</div>
-            <div class="axiom-text">A panicked commit at 2 AM with the message "IT'S WORKING DON'T TOUCH ANYTHING" is worth a thousand peer reviews. If you can't explain why it works, nobody can explain why it broke. This is the path to developer enlightenment.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 10:</div>
-            <div class="axiom-text">If the demo works, the feature is done. Everything else is just polish for the perfectionists.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 11:</div>
-            <div class="axiom-text">Friday deployments build character. Character builds legends. Legends build startups.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 12:</div>
-            <div class="axiom-text">Your local environment is the source of truth. If it works on your machine, the cloud is wrong.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 13:</div>
-            <div class="axiom-text">Microservices are just a way to turn one problem into 47 distributed problems that all blame each other. It's like a dysfunctional family reunion, but with more JSON and fewer awkward hugs.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 14:</div>
-            <div class="axiom-text">Staging environments are where code goes to pretend it works before failing spectacularly in production. Skip the middleman—production IS your staging environment. Your users are just very patient beta testers who happen to pay you.</div>
-        </div>
-        
-        <div class="page-footer">XGH 2nd Edition - Page 5</div>
-    </div>
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
 
-    <!-- Team Dynamics Page -->
-    <div class="page content-page">
-        <div class="section-title">Team Dynamics & Communication (Axioms 15-19)</div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 15:</div>
-            <div class="axiom-text">A good developer codes with their gut and Claude. A great developer codes with their gut, Claude, and a junior developer to blame.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 16:</div>
-            <div class="axiom-text">Stand-ups are theater for management. The real work happens in bathroom conversations, elevator debugging sessions, and that one Slack DM where someone admits they don't know what their microservice actually does.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 17:</div>
-            <div class="axiom-text">Modern pair programming is you, three AI chatbots, and Stack Overflow having a four-way argument about semicolons while your rubber duck judges silently from the corner. The rubber duck is usually right, but nobody listens to it anymore.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 18:</div>
-            <div class="axiom-text">If you're not breaking things, you're a junior developer. If you're breaking everything, you're a senior developer having a bad day. If you're breaking things selectively and blaming AWS, you're ready for promotion.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 19:</div>
-            <div class="axiom-text">In code reviews, the person asking "What does this function do?" has never been oncall. The person who approves with just "LGTM 👍" has seen things that would make a kernel developer weep. Trust the quick approvers—they've transcended caring about code quality and achieved zen-like acceptance of chaos.</div>
-        </div>
-        
-        <div class="page-footer">XGH 2nd Edition - Page 6</div>
-    </div>
+        // Category filtering
+        function showCategory(category) {
+            const cards = document.querySelectorAll('.axiom-card');
+            const tabs = document.querySelectorAll('.category-tab');
+            
+            // Update active tab
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
 
-    <!-- Architecture & Design Page -->
-    <div class="page content-page">
-        <div class="section-title">Architecture & Design (Axioms 20-23)</div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 20:</div>
-            <div class="axiom-text">Every problem can be solved by adding another layer of abstraction, middleware, or microservice. If that doesn't work, add a message queue. If that still doesn't work, blame it on eventual consistency and go home. Tomorrow's problem is tomorrow's developer's problem.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 21:</div>
-            <div class="axiom-text">Design patterns are suggestions for people who can't vibe their way to a solution. Trust the flow, embrace the spaghetti.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 22:</div>
-            <div class="axiom-text">Kubernetes is what happens when 47 Google engineers get together and ask "How can we make deploying a simple web app feel like launching a space shuttle?" The answer involves 12 YAML files, 3 existential crises, and a sacrifice to the networking gods.</div>
-        </div>
-        
-        <div class="axiom">
-            <div class="axiom-number">Axiom 23:</div>
-            <div class="axiom-text">The code that survives is not the most elegant or efficient, but the code that nobody understands well enough to delete. Write your functions like cryptic incantations—future developers will be too scared to touch them. Job security through technical debt is the highest form of developer art.</div>
-        </div>
-        
-        <div class="page-footer">XGH 2nd Edition - Page 7</div>
-    </div>
+        // Add CSS for fade animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
 
-    <!-- Conclusion Page -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1 class="page-title">Conclusion</h1>
-        </div>
-        
-        <p>The XGH methodology has evolved, but its core philosophy remains unchanged: software development is fundamentally about solving problems, not following processes. In a world where frameworks change faster than fashion trends and best practices become obsolete before they're fully documented, the ability to adapt and deliver remains the most valuable skill.</p>
-        
-        <p>These 23 axioms are not rules to be followed blindly, but rather guidelines to help you navigate the complex landscape of modern software development. They acknowledge the reality that sometimes you need to choose pragmatism over perfection, delivery over documentation, and results over orthodoxy.</p>
-        
-        <p>The inclusion of vibe-driven development represents a maturation of the XGH philosophy. We now recognize that developer intuition, honed through experience and AI prompting, is often more reliable than elaborate planning processes. Trust your instincts, but verify with your AI assistant of choice.</p>        
-                <p>Remember, the goal is not to write the most beautiful code or to follow every best practice perfectly. The goal is to solve real problems for real users while maintaining your sanity and your sense of humor. Sometimes that means taking shortcuts. Sometimes it means letting AI design the entire architecture and application. Always it means ensuring someone else will maintain it when it inevitably breaks.</p>        
-        <div class="final-note">
-            <strong>XGH 2nd Edition is not just a methodology—it's a lifestyle.</strong><br>
-            Code with passion, debug with coffee, and deploy with the confidence of someone who has never read their own code six months later.
-        </div>
-        
-        <div class="page-footer">XGH 2nd Edition - Page 8</div>
-    </div>
+        // Intersection Observer for card animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all axiom cards
+        document.querySelectorAll('.axiom-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
